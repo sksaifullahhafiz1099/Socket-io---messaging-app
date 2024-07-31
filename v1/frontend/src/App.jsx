@@ -25,8 +25,8 @@ function App() {
   }
 
   useEffect(()=>{
-    socket.on("receive_message",(data)=>{
-      setMessageReceived(data.message);
+    socket.on("receive_message",(message)=>{
+      setMessageReceived(message);
     })
   },[socket])
 
@@ -47,7 +47,7 @@ function App() {
               value = {message}
               onChange={handleChange}
       />
-      <div onClick={sendMessage}>button</div>
+      <button onClick={sendMessage}>send message</button>
       <div>
         message received:{messageReceived}
       </div>
