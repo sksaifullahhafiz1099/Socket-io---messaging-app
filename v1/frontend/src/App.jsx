@@ -37,19 +37,33 @@ function App() {
   };
 
   return (
-    <div>
-      <input  type="text" 
-              value = {room}
-              onChange={handleChange2}
-      />
-      <button onClick={joinRoom}> Join Room</button>
-      <input  type="text" 
-              value = {message}
-              onChange={handleChange}
-      />
-      <button onClick={sendMessage}>send message</button>
-      <div>
-        message received:{messageReceived}
+    <div className='m-20 p-6 flex flex-col bg-slate-500 rounded-2xl text-slate-700'>
+
+      <div className='text-4xl font-bold'>Room:</div>
+      <div className='flex justify-start mt-3 text-xl'>
+        <div className='mr-3'>Room Name:</div>
+        <input  className='bg-slate-700 rounded-md px-1 text-slate-400 focus:border-stone-500 w-1/4' 
+                type="text" 
+                value = {room}
+                onChange={handleChange2}
+        />
+      </div>
+      <button className='bg-slate-600 w-40 mt-2 text-md font-bold text-slate-900 rounded-md hover:bg-slate-400 hover:text-slate-700' onClick={joinRoom}> Join Room</button>
+
+      <div className='text-4xl font-bold mt-8'>Message:</div>
+      <div className='flex justify-start mt-3 text-xl'>
+        <div className='mr-3'>Message Text:</div>
+        <input  className='bg-slate-700 rounded-md px-1 text-slate-400 focus:border-stone-500 w-1/4' 
+                type="text" 
+                value = {message}
+                onChange={handleChange}
+        />
+      </div>
+      <button className='bg-slate-600 w-40 mt-2 text-md font-bold text-slate-900 rounded-md hover:bg-slate-400 hover:text-slate-700' onClick={sendMessage}>Send Message</button>
+
+      <div className='mt-3 text-xl flex'>
+        
+        <div className='mr-2'>message received:</div> <div className='text-slate-900'>{messageReceived}</div>
       </div>
     </div>
   )
